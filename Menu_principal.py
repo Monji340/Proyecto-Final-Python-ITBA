@@ -58,12 +58,13 @@ class GraficarTicker:
     
     def cerrarVentana(self):
         self.ventana1.destroy() 
-        
+
     def ingresar(self):
         self.ventana1.title("Graficando...")      # Instanciar con programa de graficar
         self.ventana1.after(3000, self.cerrarVentana)   #Cerramos la ventana después de 3 segundos
 
 
+#################  Menu Principal  ###################
 
 # definimos las acciones asociadas a las opciones de los menús
 def accion1():
@@ -81,7 +82,7 @@ def accionb():
 # creamos la ventana principal
 ventana = tk.Tk()
 ventana.title('Nombre del programa')
-ventana.geometry('400x400')
+ventana.geometry('500x400')
 
 # creamos una barra de menús y la añadimos a la ventana principal
 # cada ventana solo puede tener una barra de menús
@@ -111,7 +112,7 @@ barra_menus.add_cascade(label="Menú", menu=menu)
 
 # añadimos una etiqueta para ver el efecto de los botones del menú
 texto = tk.Label(ventana, text='¡Bienvenido/a!')
-texto.place(x=200, y=200)
+texto.place(x=200, y=150)
 
 
 if __name__ == '__main__':
