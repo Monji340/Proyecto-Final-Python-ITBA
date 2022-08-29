@@ -25,13 +25,17 @@ class ActualizacionDatos:
         self.entry3 = tk.Entry(self.ventana1, width=30, textvariable=self.dato3)         #Ver en que formato debe ingresar la fecha
         self.entry3.grid(column=1, row=2)
 
-        self.boton1 = tk.Button(self.ventana1, text="Pedir datos", command=self.ingresar)
+        self.boton1 = tk.Button(self.ventana1, text="Pedir datos", command=self.ingresar)    # Falta agregar que la ventana se cierre una vez enviado los datos
         self.boton1.grid(column=1, row=3)
 
         self.ventana1.mainloop()
     
+    def cerrarVentana(self):
+        self.ventana1.destroy() 
+
     def ingresar(self):
-        self.ventana1.title("Pidiendo Datos...")     # Instanciar con programa de Actualizacion de datos
+        self.ventana1.title("Pidiendo Datos...")     # Instanciar con programa de Actualizacion de datos.
+        self.ventana1.after(3000, self.cerrarVentana)   #Cerramos la ventana después de 3 segundos
         
 
 ######     Ventana para pedir datos al usuario - Gráfico de Ticker    ######
@@ -47,13 +51,17 @@ class GraficarTicker:
         self.entry1 = tk.Entry(self.ventana1, width=30, textvariable=self.dato1)
         self.entry1.grid(column=1, row=0)
 
-        self.boton1 = tk.Button(self.ventana1, text="Graficar", command=self.ingresar)
+        self.boton1 = tk.Button(self.ventana1, text="Graficar", command=self.ingresar)      # Falta agregar que la ventana se cierre una vez enviado los datos
         self.boton1.grid(column=1, row=3)
 
         self.ventana1.mainloop()
     
+    def cerrarVentana(self):
+        self.ventana1.destroy() 
+        
     def ingresar(self):
         self.ventana1.title("Graficando...")      # Instanciar con programa de graficar
+        self.ventana1.after(3000, self.cerrarVentana)   #Cerramos la ventana después de 3 segundos
 
 
 

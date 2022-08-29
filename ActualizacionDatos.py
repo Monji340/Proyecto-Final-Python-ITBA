@@ -30,8 +30,14 @@ class ActualizacionDatos:
 
         self.ventana1.mainloop()
     
+    def cerrarVentana(self):
+        self.ventana1.destroy()                #Funcion para cerrar la ventana
+
     def ingresar(self):
         self.ventana1.title("Pidiendo Datos...")
+        self.ventana1.after(3000, self.cerrarVentana)          #Cerramos la ventana después de 3 segundos
+
+    
 
 
 aplicacion1=ActualizacionDatos()
