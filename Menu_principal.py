@@ -1,41 +1,6 @@
 import tkinter as tk
+from VentanaPrueba import actualizacionDatos       #Función (ventana) opción 'Actualizacion de datos'
 
-######     Ventana para pedir datos al usuario - Actualización de datos    ######
-class ActualizacionDatos:
-    
-    def __init__(self):
-        self.ventana1 = tk.Tk()
-        self.ventana1.title('Actualización de Datos')
-
-        self.label1 = tk.Label(self.ventana1, text="Ingrese ticker a pedir:")
-        self.label1.grid(column=0, row=0)
-        self.dato1 = tk.StringVar()
-        self.entry1 = tk.Entry(self.ventana1, width=30, textvariable=self.dato1)
-        self.entry1.grid(column=1, row=0)
-
-        self.label2 = tk.Label(self.ventana1, text="Fecha inicio")
-        self.label2.grid(column=0, row=1)
-        self.dato2 = tk.StringVar()
-        self.entry2 = tk.Entry(self.ventana1, width=30, textvariable=self.dato2)         #Ver en que formato debe ingresar la fecha
-        self.entry2.grid(column=1, row=1)
-
-        self.label3 = tk.Label(self.ventana1, text="Fecha fin")
-        self.label3.grid(column=0, row=2)
-        self.dato3 = tk.StringVar()
-        self.entry3 = tk.Entry(self.ventana1, width=30, textvariable=self.dato3)         #Ver en que formato debe ingresar la fecha
-        self.entry3.grid(column=1, row=2)
-
-        self.boton1 = tk.Button(self.ventana1, text="Pedir datos", command=self.ingresar)    # Falta agregar que la ventana se cierre una vez enviado los datos
-        self.boton1.grid(column=1, row=3)
-
-        self.ventana1.mainloop()
-    
-    def cerrarVentana(self):
-        self.ventana1.destroy() 
-
-    def ingresar(self):
-        self.ventana1.title("Pidiendo Datos...")     # Instanciar con programa de Actualizacion de datos.
-        self.ventana1.after(3000, self.cerrarVentana)   #Cerramos la ventana después de 3 segundos
         
 
 ######     Ventana para pedir datos al usuario - Gráfico de Ticker    ######
@@ -93,7 +58,7 @@ ventana.config(menu=barra_menus)
 menu = tk.Menu(barra_menus, tearoff=False)
 
 # añadimos opciones al menú indicando su nombre y acción asociado
-menu.add_command(label='Actualizacioón de datos', command=ActualizacionDatos)
+menu.add_command(label='Actualizacioón de datos', command=actualizacionDatos)
 
 # creamos un submenú
 submenu = tk.Menu(menu, tearoff=False)
