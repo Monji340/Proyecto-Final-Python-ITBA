@@ -1,4 +1,4 @@
-# Pedido de datos para la Actualización de datos
+#### Pedido de datos para la Actualización de datos ####
 
 import tkinter as tk
 
@@ -27,7 +27,7 @@ def actualizacionDatos():
     # Función para ingresar los datos
     def boton():
         def cerrarVentana():
-            ventana1.destroy()                #Funcion para cerrar la ventana
+            ventana1.destroy()                       #Funcion para cerrar la ventana
         ventana1.title("Pidiendo Datos...")
         ventana1.after(3000, cerrarVentana)          #Cerramos la ventana después de 3 segundos
 
@@ -39,5 +39,6 @@ def actualizacionDatos():
     lista = [dato1.get(), dato2.get(), dato3.get()]
     return lista
 
-datos = actualizacionDatos()
-print(datos)
+# Prueba si la función devuelve una lista
+# datos = actualizacionDatos()
+# print(datos)
